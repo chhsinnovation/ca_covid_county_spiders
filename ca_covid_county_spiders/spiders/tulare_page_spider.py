@@ -15,6 +15,6 @@ class TularePageSpider(scrapy.Spider):
         page = response.css('article div.mura-region-local').get()
         md = textGen.handle(page)
         yield {
-            'text': md,
-            'url': response.url,
+            'content': md,
+            'scraped_at': response.url,
         }

@@ -11,7 +11,7 @@ class TulareDailySpider(scrapy.Spider):
         for update in response.css('dl'):
             yield {
                 'title': update.css('dt.title a::text').get(),
-                'summary': update.css('dd.summary p::text').get(),
-                'href': response.urljoin(update.css('dd.readmor a::attr(href)').get()),
-                'url': response.url,
+                'content': update.css('dd.summary p::text').get(),
+                'links_to': response.urljoin(update.css('dd.readmore a::attr(href)').get()),
+                'scraped_at': response.url,
             }
