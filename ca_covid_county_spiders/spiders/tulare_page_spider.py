@@ -1,5 +1,4 @@
 import scrapy
-import html2text
 from ca_covid_county_spiders.utils.markdown import markdownIt
 
 class TularePageSpider(scrapy.Spider):
