@@ -1,8 +1,8 @@
 from datetime import datetime
 
 def mergeDicts(dict1, dict2): 
-    res = {**dict1, **dict2} 
-    return res 
+    dict1.update(dict2)
+    return dict1
 
 def salt(response, payload):
     combined = mergeDicts(payload, {
