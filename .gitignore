@@ -3,6 +3,9 @@
 *.py[cod]
 *$py.class
 
+# Output files
+output/
+
 # C extensions
 *.so
 
