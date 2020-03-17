@@ -1,4 +1,6 @@
 import scrapy
+from ca_covid_county_spiders.utils.markdown import markdownIt
+from ca_covid_county_spiders.utils.seasoning import salt
 
 class TulareDailySpider(scrapy.Spider):
     name = "tulare_daily"
@@ -8,9 +10,8 @@ class TulareDailySpider(scrapy.Spider):
 
     def parse(self, response):
         for item in response.css('dl'):
-            yield {
+            yield salt(response, {
                 'title': item.css('dt.title a::text').get(),
                 'content': item.css('dd.summary p::text').get(),
                 'links_to': response.urljoin(item.css('dd.readmore a::attr(href)').get()),
-                'scraped_at': response.url,
-            }
+            })

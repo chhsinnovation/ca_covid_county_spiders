@@ -1,5 +1,6 @@
 import scrapy
 from ca_covid_county_spiders.utils.markdown import markdownIt
+from ca_covid_county_spiders.utils.seasoning import salt
 
 class TularePageSpider(scrapy.Spider):
     name = "tulare_page"
@@ -10,7 +11,6 @@ class TularePageSpider(scrapy.Spider):
 
     def parse(self, response):
         page = response.css('article div.mura-region-local').get()
-        yield {
+        yield salt(response, {
             'content': markdownIt(page),
-            'scraped_at': response.url,
-        }
+        })
