@@ -1,6 +1,5 @@
 import scrapy
 import html2text
-from ca_covid_county_spiders.utils.files import writeFiles
 from ca_covid_county_spiders.utils.markdown import markdownIt
 
 class TularePageSpider(scrapy.Spider):
@@ -12,9 +11,7 @@ class TularePageSpider(scrapy.Spider):
 
     def parse(self, response):
         page = response.css('article div.mura-region-local').get()
-        data = {
+        yield {
             'content': markdownIt(page),
             'scraped_at': response.url,
         }
-        writeFiles(response.body, data, self.name)
-        yield data
