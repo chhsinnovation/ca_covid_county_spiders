@@ -16,7 +16,9 @@ Seven steps to get a new Cloud9 IDE. It's way easier than it sounds.
 
 ## Set up the new Cloud9 instance
 
-Update Ubuntu, because why not?
+All of the following code blurb blocks should be entered into your command-line terminal. The terminal should appear toward the bottom of the Cloud9 window shortly after Cloud9 starts up. If you don't see it, go to Cloud9's `Window` menu (along the top) and select `New Terminal`.
+
+First, update Ubuntu, because why not?
 
 `sudo apt update`
 
