@@ -50,6 +50,11 @@ Seven steps to get a new Cloud9 IDE. It's way easier than it sounds.
 
 `pip3 install -r requirements.txt`
 
+10. Configure `git` with your name and email.
+
+`jon.jensen@chhs.ca.gov:~/environment/ca_covid_county_spiders (master) $ git config --global user.name "Your Name"                                                                      
+jon.jensen@chhs.ca.gov:~/environment/ca_covid_county_spiders (master) $ git config --global user.email yourname@whatever.com`
+
 ## Run some scrapy
 
 Just check out a crawler to see if it works.
