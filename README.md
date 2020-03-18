@@ -1,0 +1,1 @@
+scrapy crawl sac_county_daily -s FEED_URI='output/%(name)s_%(time)s.json' -s FEED_FORMAT=json

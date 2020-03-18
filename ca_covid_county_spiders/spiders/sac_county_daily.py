@@ -1,8 +1,9 @@
 import scrapy
 from ca_covid_county_spiders.utils.markdown import markdownIt
-from ca_covid_county_spiders.utils.seasoning import salt, hasCovid
+from ca_covid_county_spiders.utils.seasoning import salt
+from ca_covid_county_spiders.utils.covid import hasCovid
 
-class SacCountySpider(scrapy.Spider):
+class SacCountyDailySpider(scrapy.Spider):
     name = "sac_county_daily"
     start_urls = [
         'https://www.saccounty.net/news/latest-news/Pages/2020-Latest-News-Archive.aspx',
