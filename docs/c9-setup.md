@@ -16,7 +16,9 @@ Seven steps to get a new Cloud9 IDE. It's way easier than it sounds.
 
 ## Set up the new Cloud9 instance
 
-All of the following code blurb blocks should be entered into your command-line terminal. The terminal should appear toward the bottom of the Cloud9 window shortly after Cloud9 starts up. If you don't see it, go to Cloud9's `Window` menu (along the top) and select `New Terminal`.
+All of the following code blurb blocks should be entered into your command-line terminal. 
+
+> The terminal should appear toward the bottom of the Cloud9 window shortly after Cloud9 starts up. If you don't see it, go to Cloud9's `Window` menu (along the top) and select `New Terminal`.
 
 First, update Ubuntu, because why not?
 
@@ -30,9 +32,9 @@ Enter the following command and copy the output in full.
 
 `cat /home/ubuntu/.ssh/id_rsa.pub`
 
-Go to GitHub and [enter a new SSH key](https://github.com/settings/keys). Paste the output from the previous commmand into the `Key` section. `Title` can be whatever you like.
+Go to GitHub and [enter a new SSH key](https://github.com/settings/keys) into your account settings. Paste the output from the previous commmand into the `Key` section. `Title` can be whatever you like.
 
-Start up SSH agent.
+Back to Cloud9, start up the SSH agent.
 
 `eval $(ssh-agent -s)`
 
