@@ -16,41 +16,41 @@ Seven steps to get a new Cloud9 IDE. It's way easier than it sounds.
 
 ## Set up the new Cloud9 instance
 
-1. Update Ubuntu, because why not?
+Update Ubuntu, because why not?
 
 `sudo apt update`
 
-2. Generate an RSA key pair. This is going to help us interact with GitHub. Just hit `Enter` to accept defaults.
+Generate an RSA key pair. This is going to help us interact with GitHub. Just hit `Enter` to accept defaults.
 
 `ssh-keygen -t rsa`
 
-3. Enter the following command and copy the output in full.
+Enter the following command and copy the output in full.
 
 `cat /home/ubuntu/.ssh/id_rsa.pub`
 
-4. Go to GitHub and [enter a new SSH key](https://github.com/settings/keys). Copy the previous output into the `Key` section. `Title` can be whatever you like.
+Go to GitHub and [enter a new SSH key](https://github.com/settings/keys). Paste the output from the previous commmand into the `Key` section. `Title` can be whatever you like.
 
-5. Start up SSH agent.
+Start up SSH agent.
 
 `eval $(ssh-agent -s)`
 
-6. Add your new identity to the SSH agent.
+Add your new identity to the SSH agent.
 
 `ssh-add /home/ubuntu/.ssh/id_rsa`
 
-7. Clone the code repository from GitHub. Use the SSH address.
+Clone the code repository from GitHub. Use the SSH address.
 
 `git clone git@github.com:chhsinnovation/ca_covid_county_spiders.git`
 
-8. Get into the `ca_covid_county_spiders` folder.
+Get into the `ca_covid_county_spiders` folder.
 
 `cd ca_covid_county_spiders/`
 
-9. Install Python dependencies.
+Install Python dependencies.
 
 `pip3 install -r requirements.txt`
 
-10. Configure `git` with your name and email.
+Configure `git` with your name and email.
 
 `jon.jensen@chhs.ca.gov:~/environment/ca_covid_county_spiders (master) $ git config --global user.name "Your Name"                                                                      
 jon.jensen@chhs.ca.gov:~/environment/ca_covid_county_spiders (master) $ git config --global user.email yourname@whatever.com`
