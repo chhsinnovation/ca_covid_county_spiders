@@ -52,8 +52,8 @@ Install Python dependencies.
 
 Configure `git` with your name and email.
 
-`jon.jensen@chhs.ca.gov:~/environment/ca_covid_county_spiders (master) $ git config --global user.name "Your Name"                                                                      
-jon.jensen@chhs.ca.gov:~/environment/ca_covid_county_spiders (master) $ git config --global user.email yourname@whatever.com`
+`git config --global user.name "Your Name"                                                                      
+git config --global user.email yourname@whatever.com`
 
 ## Run some scrapy
 
