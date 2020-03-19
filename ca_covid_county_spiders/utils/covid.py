@@ -20,6 +20,10 @@ keywords = [
     'shelter at home',
     'shelter in place',
     'shelter',
+    'CDC',
+    'CDPH',
+    'gatherings',
+    'public health emergency'
 ]
 
 def searchDict(myDict, term):

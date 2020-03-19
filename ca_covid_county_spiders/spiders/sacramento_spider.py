@@ -1,7 +1,6 @@
 import scrapy
-from ca_covid_county_spiders.utils.markdown import markdownIt
-from ca_covid_county_spiders.utils.seasoning import salt
-from ca_covid_county_spiders.utils.covid import dataHasCovid
+from ca_covid_county_spiders.items import ContentLoader
+from ca_covid_county_spiders.utils.covid import textHasCovid
 
 
 
@@ -12,19 +11,16 @@ class SacramentoDailySpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        for link in response.css('li.dfwp-item h3 a'):
-            yield response.follow(link, self.parse_post)
+        for item in response.css('li.dfwp-item'):
+            link = item.css('h3 a::attr(href)').get()
+            if link is not None and textHasCovid(item.get()):
+                yield response.follow(link, self.parse_post)
     
     def parse_post(self, response):
-        page = response.css('div.article').get()
-        data = salt(self, response, {
-            'title': response.css('div.heading h2::text').get(),
-            'content': markdownIt(page),
-        })
-        if dataHasCovid(data):
-            yield data
-        else:
-            return
+        loader = ContentLoader(response=response)
+        loader.add_css('title', 'div.heading h2::text')
+        loader.add_css('content', 'div.article')
+        return loader.load_item()
 
 
 
@@ -35,10 +31,10 @@ class SacramentoHealthSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        page = response.css('.col-sm-8').get()
-        yield salt(self, response, {
-            'content': markdownIt(page),
-        })
+        loader = ContentLoader(response=response)
+        loader.add_value('title', 'Sacramento Public Health')
+        loader.add_css('content', 'div.news')
+        return loader.load_item()
     
 
 
@@ -49,7 +45,7 @@ class SacramentoPageSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        page = response.css('div.content').get()
-        yield salt(self, response, {
-            'content': markdownIt(page),
-        })
+        loader = ContentLoader(response=response)
+        loader.add_css('title', 'div.content h3')
+        loader.add_css('content', 'div.content')
+        return loader.load_item()

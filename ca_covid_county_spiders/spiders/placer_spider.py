@@ -34,6 +34,7 @@ class PlacerPageSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
+        # Repeated from the Placer News spider, for now.
         loader = ContentLoader(response=response)
         loader.add_css('content', 'div#page')
         page_loader = loader.nested_css('div#page')
