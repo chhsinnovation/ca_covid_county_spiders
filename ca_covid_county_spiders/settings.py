@@ -46,9 +46,10 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'ca_covid_county_spiders.middlewares.CaCovidCountySpidersSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+    'ca_covid_county_spiders.middlewares.CaCovidCountySpidersSpiderMiddleware': 543,
+    'ca_covid_county_spiders.middlewares.ContentItemMiddleware': 542,
+}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
@@ -64,9 +65,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'ca_covid_county_spiders.pipelines.CaCovidCountySpidersPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'ca_covid_county_spiders.pipelines.CaCovidCountySpidersPipeline': 300,
+    'ca_covid_county_spiders.pipelines.CovidContentVerificationPipeline': 301,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -88,3 +90,13 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+FEED_EXPORT_FIELDS = [
+    'spider',
+    'hash',
+    'time',
+    'uri',
+    'title',
+    'content',
+]
+

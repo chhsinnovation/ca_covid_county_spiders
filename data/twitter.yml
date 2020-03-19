@@ -1,2 +1,9 @@
+contra_costa:
+  - CCCounty
+  - CoCoHealth
+sacramento:
+  - SacCountyCA
+  - SacPublicHealth
 tulare: 
+  - CountyofTulare
   - TulareCo_HHSA

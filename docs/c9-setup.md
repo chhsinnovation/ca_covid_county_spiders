@@ -60,10 +60,6 @@ Configure `git` with your name and email.
 
 `git config --global user.email yourname@whatever.com`
 
-Pull Splash from DockerHub. This is a headless web browser we'll use to process Javascript-heavy pages.
-
-
-
 ## Run some scrapy
 
 Just check out a crawler to see if it works.
