@@ -1,3 +1,5 @@
+# This file is hacky, in a bad way. Need to clean it up!
+
 keywords = [
     'COVID-19',
     'COVID19',
@@ -5,10 +7,8 @@ keywords = [
     'covid-19',
     'covid19',
     'covid',
-    'Coronavirus',
     'coronavirus',
     'corona virus',
-    'Corona',
     'corona',
     'SARS-CoV-2',
     'SARSCov2',
@@ -23,13 +23,14 @@ keywords = [
     'CDC',
     'CDPH',
     'gatherings',
-    'public health emergency'
+    'public health emergency',
+    'stay home',
 ]
 
 def searchDict(myDict, term):
     findings = []
     for key, value in myDict.items():
-        if term in value:
+        if term.lower() in value.lower():
             findings.append(key)
     return findings
 
@@ -47,7 +48,7 @@ def dataHasCovid(payload):
 def textHasCovid(string):
     findings = []
     for keyword in keywords:
-        if keyword in string:
+        if keyword.lower() in string.lower():
             findings.append(keyword)
     if findings:
         return True
