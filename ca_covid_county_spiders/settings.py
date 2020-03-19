@@ -68,7 +68,7 @@ SPIDER_MIDDLEWARES = {
 ITEM_PIPELINES = {
     'ca_covid_county_spiders.pipelines.CaCovidCountySpidersPipeline': 300,
     'ca_covid_county_spiders.pipelines.CovidContentVerificationPipeline': 301,
-    # 'ca_covid_county_spiders.pipelines.GenerateCsvPerItemPipeline': 302,
+    #'ca_covid_county_spiders.pipelines.GenerateCsvPerItemPipeline': 800,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

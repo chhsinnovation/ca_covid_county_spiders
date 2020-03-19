@@ -1,5 +1,7 @@
 import scrapy
 from ca_covid_county_spiders.items import ContentLoader
+from ca_covid_county_spiders.utils.covid import textHasCovid
+
 
 
 
@@ -8,10 +10,12 @@ class TulareDailySpider(scrapy.Spider):
     start_urls = [
         'https://tchhsa.org/eng/index.cfm/public-health/covid-19-updates-novel-coronavirus/tulare-county-health-report/',
     ]
-    
+            
     def parse(self, response):
-        for link in response.css('dl dd.readmore a'):
-            yield response.follow(link, self.parse_post)
+        for item in response.css('dl'):
+            link = item.css('dt.title a::attr(href)').get()
+            if link is not None and textHasCovid(item.get()):
+                yield response.follow(link, self.parse_post)
     
     def parse_post(self, response):
         loader = ContentLoader(response=response)

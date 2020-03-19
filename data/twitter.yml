@@ -6,6 +6,9 @@ placer:
 sacramento:
   - SacCountyCA
   - SacPublicHealth
+san_mateo:
+  - sanmateoco
+  - SMCHealth
 santa_clara:
   - SCCgov
   - HealthySCC
