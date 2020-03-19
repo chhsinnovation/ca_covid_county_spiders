@@ -3,6 +3,7 @@ from ca_covid_county_spiders.utils.covid import textHasCovid
 from ca_covid_county_spiders.items import ContentLoader
 
 
+
 class SanMateoStepsSpider(scrapy.Spider):
     name = "san_mateo_steps"
     start_urls = [

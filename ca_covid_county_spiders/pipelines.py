@@ -23,28 +23,20 @@ class CovidContentVerificationPipeline(object):
             raise DropItem('This content is not related to COVID-19.')
         return item
         
-        
-        
+
+
 # Another custom pipeline!
 class GenerateCsvPerItemPipeline(object):
-    def open_spider(self, spider):
-        self.hashes = {}
-
-    def close_spider(self, spider):
-        for exporter in self.hashes.values():
-            exporter.finish_exporting()
-            
     def _exporter_for_item(self, item):
         spider = item['spider']
         hash = item['hash']
-        if hash not in self.hashes:
-            f = open('output/{}-{}.csv'.format(spider, hash), 'wb')
-            exporter = CsvItemExporter(f, include_headers_line=True)
-            exporter.start_exporting()
-            self.hashes[hash] = exporter
-        return self.hashes[hash]
+        f = open('output/{}-{}.csv'.format(spider, hash), 'wb')
+        exporter = CsvItemExporter(f, include_headers_line=True)
+        exporter.start_exporting()
+        return exporter
         
     def process_item(self, item, spider):
         exporter = self._exporter_for_item(item)
         exporter.export_item(item)
+        exporter.finish_exporting()
         return item
