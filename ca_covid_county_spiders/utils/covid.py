@@ -13,6 +13,13 @@ keywords = [
     'SARS-CoV-2',
     'SARSCov2',
     'SARS CoV 2',
+    'social distancing',
+    'distancing',
+    'community spread',
+    'isolation',
+    'shelter at home',
+    'shelter in place',
+    'shelter',
 ]
 
 def searchDict(myDict, term):

@@ -4,6 +4,8 @@ contra_costa:
 sacramento:
   - SacCountyCA
   - SacPublicHealth
+solano: 
+  - Solano_County
 tulare: 
   - CountyofTulare
   - TulareCo_HHSA
