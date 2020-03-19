@@ -1,3 +1,20 @@
+keywords = [
+    'COVID-19',
+    'COVID19',
+    'COVID',
+    'covid-19',
+    'covid19',
+    'covid',
+    'Coronavirus',
+    'coronavirus',
+    'corona virus',
+    'Corona',
+    'corona',
+    'SARS-CoV-2',
+    'SARSCov2',
+    'SARS CoV 2',
+]
+
 def searchDict(myDict, term):
     findings = []
     for key, value in myDict.items():
@@ -5,20 +22,7 @@ def searchDict(myDict, term):
             findings.append(key)
     return findings
 
-def hasCovid(payload):
-    
-    keywords = [
-        'COVID-19',
-        'COVID19',
-        'COVID',
-        'coronavirus',
-        'corona virus',
-        'corona',
-        'SARS-CoV-2',
-        'SARSCov2',
-        'SARS CoV 2',
-    ]
-    
+def dataHasCovid(payload):
     findings = []
     for keyword in keywords:
         query = searchDict(payload, keyword)
@@ -28,3 +32,14 @@ def hasCovid(payload):
         return True
     else: 
         return False
+        
+def textHasCovid(string):
+    findings = []
+    for keyword in keywords:
+        if keyword in string:
+            findings.append(keyword)
+    if findings:
+        return True
+    else: 
+        return False
+    

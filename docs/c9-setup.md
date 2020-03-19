@@ -60,6 +60,10 @@ Configure `git` with your name and email.
 
 `git config --global user.email yourname@whatever.com`
 
+Pull Splash from DockerHub. This is a headless web browser we'll use to process Javascript-heavy pages.
+
+
+
 ## Run some scrapy
 
 Just check out a crawler to see if it works.
@@ -68,11 +72,11 @@ Just check out a crawler to see if it works.
 
 Output a JSON file. (Check the output folder to find the file.)
 
-`scrapy crawl sac_county_daily -o output/%(name)s-%(time)s.csv`
+`scrapy crawl sac_county_daily -o 'output/%(name)s-%(time)s.csv'`
 
 Output a JSON file.
 
-`scrapy crawl sac_county_daily -o output/%(name)s-%(time)s.json`
+`scrapy crawl sac_county_daily -o 'output/%(name)s-%(time)s.json'`
 
 ## Still dark magic
 
