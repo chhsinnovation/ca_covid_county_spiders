@@ -38,7 +38,21 @@ class SanMateoNewsSpider(scrapy.Spider):
         loader = ContentLoader(response=response)
         loader.add_css('content', 'div.main-content')
         loader.add_css('title', 'h1.title')
-        return loader.load_item()   
+        return loader.load_item() 
+
+
+
+class SanMateoShelterSpider(scrapy.Spider):
+    name = "san_mateo_shelter"
+    start_urls = [
+        'https://www.smcgov.org/shelter-place-faqs',
+    ]
+    
+    def parse(self, response):
+        loader = ContentLoader(response=response)
+        loader.add_css('content', 'div#main')
+        loader.add_css('title', 'h1#page-title')
+        return loader.load_item()
  
 
 
