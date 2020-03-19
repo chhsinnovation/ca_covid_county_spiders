@@ -68,10 +68,11 @@ class ContentItemMiddleware(object):
     def process_spider_output(self, response, result, spider):
         for item in result:
             if isinstance(item, ContentItem):
+                content = item['content']
                 item['uri'] = response.url
                 item['spider'] = spider.name
                 item['time'] = datetime.now().isoformat()
-                item['hash'] = hashlib.md5(response.body).hexdigest()
+                item['hash'] = hashlib.md5(str(content).encode('utf-8')).hexdigest()
                 yield item
             else:
                 yield item
