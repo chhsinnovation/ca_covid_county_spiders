@@ -6,6 +6,9 @@ placer:
 sacramento:
   - SacCountyCA
   - SacPublicHealth
+santa_clara:
+  - SCCgov
+  - HealthySCC
 solano: 
   - Solano_County
 tulare: 
