@@ -1,6 +1,8 @@
 contra_costa:
   - CCCounty
   - CoCoHealth
+placer:
+  - PlacerCA
 sacramento:
   - SacCountyCA
   - SacPublicHealth

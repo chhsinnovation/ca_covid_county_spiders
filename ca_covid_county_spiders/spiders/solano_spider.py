@@ -1,6 +1,3 @@
-# Update 3/19 at 10:30am
-# Various Solano county pages are down. Come back and verify later.
-
 import scrapy
 from ca_covid_county_spiders.utils.covid import textHasCovid
 from ca_covid_county_spiders.items import ContentLoader
