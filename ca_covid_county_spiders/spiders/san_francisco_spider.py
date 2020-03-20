@@ -51,7 +51,7 @@ class SanFranciscoNewsSpider(scrapy.Spider):
 
 # Cheating here by tricking one spider into tracking two sites.
 class SanFranciscoHealthPageSpider(scrapy.Spider):
-    name = "san_francisco_page"
+    name = "san_francisco_health_page"
     start_urls = [
         'https://www.sfdph.org/dph/alerts/coronavirus.asp',
         'https://www.sfdph.org/dph/alerts/coronavirus-pressreleases.asp',
