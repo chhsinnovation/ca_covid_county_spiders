@@ -1,6 +1,9 @@
 contra_costa:
   - CCCounty
   - CoCoHealth
+los angeles:
+  - CountyofLA
+  - lapublichealth
 placer:
   - PlacerCA
 sacramento:
