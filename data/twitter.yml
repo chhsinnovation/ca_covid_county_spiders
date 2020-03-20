@@ -9,6 +9,9 @@ placer:
 sacramento:
   - SacCountyCA
   - SacPublicHealth
+san_francisco:
+  - sfgov
+  - SF_DPH
 san_mateo:
   - sanmateoco
   - SMCHealth
