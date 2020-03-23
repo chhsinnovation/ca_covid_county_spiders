@@ -64,18 +64,18 @@ Configure `git` with your name and email.
 
 Just check out a crawler to see if it works.
 
-`scrapy crawl sac_county_daily`
+`scrapy crawl tulare_page`
 
 Output a JSON file. (Check the output folder to find the file.)
 
-`scrapy crawl sac_county_daily -o 'output/%(name)s-%(time)s.csv'`
+`scrapy crawl tulare_page -o 'output/%(name)s-%(time)s.csv'`
 
 Output a JSON file.
 
-`scrapy crawl sac_county_daily -o 'output/%(name)s-%(time)s.json'`
+`scrapy crawl tulare_page -o 'output/%(name)s-%(time)s.json'`
 
 ## Still dark magic
 
 Use scrapy's feed export options.
 
-`scrapy crawl sac_county_daily -s FEED_URI='output/%(name)s-%(time)s.json' -s FEED_FORMAT=json`
+`scrapy crawl tulare_page -s FEED_URI='output/%(name)s-%(time)s.json' -s FEED_FORMAT=json`
