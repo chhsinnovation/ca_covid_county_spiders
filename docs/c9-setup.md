@@ -24,11 +24,11 @@ First, update Ubuntu, because why not?
 
 `sudo apt update`
 
-Generate an RSA key pair. This is going to help us interact with GitHub. Just hit `Enter` to accept defaults.
+Generate an RSA key pair. This is going to help us interact with GitHub. 
 
 `ssh-keygen -t rsa`
 
-Enter the following command and copy the output in full.
+Just hit `Enter` to accept defaults. When finished, enter the following command and copy the output in full.
 
 `cat /home/ubuntu/.ssh/id_rsa.pub`
 
