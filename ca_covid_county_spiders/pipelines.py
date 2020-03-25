@@ -8,10 +8,12 @@
 from scrapy.exceptions import DropItem
 from scrapy.exporters import CsvItemExporter
 from ca_covid_county_spiders.utils.covid import dataHasCovid
+
+"""
 import boto3
 import smart_open
-
 s3 = boto3.resource('s3')
+"""
 
 
 
@@ -47,7 +49,7 @@ class GenerateCsvPerItemPipeline(object):
         exporter.finish_exporting()
         return item
 
-
+"""
 
 # Another custom pipeline!
 class GenerateCsvPerItemForS3Pipeline(object):
@@ -65,3 +67,4 @@ class GenerateCsvPerItemForS3Pipeline(object):
         exporter.finish_exporting()
         return item
 
+"""
